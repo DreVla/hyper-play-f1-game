@@ -21,6 +21,7 @@ public class JoystickPlayerExample : MonoBehaviour
         if (variableJoystick.Vertical == 0)
         {
             rb.drag += Time.fixedDeltaTime;
+            if (variableJoystick.Horizontal == 0) Center();
         }
         else
         {
