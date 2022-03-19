@@ -12,4 +12,12 @@ public class CarCollusion : MonoBehaviour
             gameOver.GameIsOver();
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Competitor")
+        {
+            gameOver.GameIsOver();
+        }
+    }
 }
