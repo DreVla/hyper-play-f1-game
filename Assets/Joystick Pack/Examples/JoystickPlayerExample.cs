@@ -26,7 +26,8 @@ public class JoystickPlayerExample : MonoBehaviour
             else if (variableJoystick.Horizontal < 0) RotateLeft();
             rb.drag = initialDrag;
             Vector2 direction = Vector2.up * variableJoystick.Vertical + Vector2.right * variableJoystick.Horizontal;
-            rb.AddForce(direction * speed * Time.fixedDeltaTime, ForceMode2D.Impulse); 
+            rb.AddForce(direction * speed * Time.fixedDeltaTime, ForceMode2D.Impulse);
+        }
     }
 
     public Vector3 euler;
