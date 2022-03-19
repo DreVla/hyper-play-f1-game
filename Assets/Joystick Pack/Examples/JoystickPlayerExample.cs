@@ -10,6 +10,7 @@ public class JoystickPlayerExample : MonoBehaviour
     public VariableJoystick variableJoystick;
     public Rigidbody2D rb;
     public GameObject car;
+    public GameObject boostParticles;
 
 
 
@@ -18,11 +19,21 @@ public class JoystickPlayerExample : MonoBehaviour
         if (variableJoystick.Vertical == 0)
         {
             if (variableJoystick.Horizontal == 0) Center();
+            boostParticles.SetActive(false);
         }
         else
         {
             if (variableJoystick.Horizontal > 0) RotateRight();
             else if (variableJoystick.Horizontal < 0) RotateLeft();
+            // Check if need to show boost particle effect
+            if (variableJoystick.Vertical > 0.5)
+            {
+                boostParticles.SetActive(true);
+            }
+            else
+            {
+                boostParticles.SetActive(false);
+            }
             rb.drag = initialDrag;
             Vector2 direction = Vector2.up * variableJoystick.Vertical + Vector2.right * variableJoystick.Horizontal;
             rb.AddForce(direction * speed * Time.fixedDeltaTime, ForceMode2D.Impulse);
@@ -34,7 +45,7 @@ public class JoystickPlayerExample : MonoBehaviour
     private void RotateLeft()
     {
         euler = car.transform.eulerAngles;
-        if(!(euler.z < 32 && euler.z > 28))
+        if (!(euler.z < 32 && euler.z > 28))
             car.transform.Rotate(Vector3.forward * -variableJoystick.Horizontal * rotationSpeed);
     }
 
@@ -47,9 +58,9 @@ public class JoystickPlayerExample : MonoBehaviour
     private void Center()
     {
         float carAngle = car.transform.eulerAngles.z;
-        if (carAngle > 180 && carAngle < 358) 
+        if (carAngle > 180 && carAngle < 358)
             car.transform.Rotate(Vector3.forward * rotationSpeed);
-        else if(carAngle < 180 && carAngle > 2) 
+        else if (carAngle < 180 && carAngle > 2)
             car.transform.Rotate(Vector3.forward * -rotationSpeed);
     }
 }

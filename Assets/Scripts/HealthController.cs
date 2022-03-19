@@ -6,6 +6,7 @@ public class HealthController : MonoBehaviour
 {
     public int health;
     public GameOver gameOver;
+    public ParticleSystem explosionParticle;
 
     void Start()
     {
@@ -26,6 +27,7 @@ public class HealthController : MonoBehaviour
         {
             health -= 10;
             Debug.Log(health.ToString());
+            explosionParticle.Play();
         }
         else if(collision.collider.tag == "Bonus")
         {
@@ -44,6 +46,7 @@ public class HealthController : MonoBehaviour
             health -= 10;
             Debug.Log(health.ToString());
             Destroy(collision.gameObject);
+            explosionParticle.Play();
         }
         else if (collision.tag == "Bonus")
         {
