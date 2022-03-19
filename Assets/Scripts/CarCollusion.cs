@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class CarCollusion : MonoBehaviour
 {
-    public GameManager gameManager;
+    public GameOver gameOver;
     void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.collider.tag == "Competitor")
         {
-            gameManager.GameEnd();
+            gameOver.GameIsOver();
         }
     }
 }
