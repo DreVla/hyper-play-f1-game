@@ -1,16 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HealthController : MonoBehaviour
 {
-    public int health;
+    public int health = 3;
     public GameOver gameOver;
-
-    void Start()
-    {
-        health = 100;
-    }
+    public Image healthBar;
+    public Sprite health0, health1, health2, health3;
 
     void Update()
     {
@@ -24,15 +22,13 @@ public class HealthController : MonoBehaviour
     {
         if(collision.collider.tag == "Wall")
         {
-            health -= 10;
-            Debug.Log(health.ToString());
+            health -= 1;
         }
         else if(collision.collider.tag == "Bonus")
         {
-            if (health < 100)
+            if (health < 4)
             {
-                health += 10;
-                Debug.Log(health.ToString());
+                health += 1;
             }           
         }
     }
@@ -41,19 +37,38 @@ public class HealthController : MonoBehaviour
     {
         if (collision.tag == "Wall")
         {
-            health -= 10;
-            Debug.Log(health.ToString());
+            health -= 1;
+            SwitchSPrite(health);
             Destroy(collision.gameObject);
         }
         else if (collision.tag == "Bonus")
         {
-            if (health < 100)
+            if (health < 4)
             {
-                health += 10;
-                Debug.Log(health.ToString());
+                health += 1;
+                SwitchSPrite(health);
             }
 
             Destroy(collision.gameObject);
+        }
+    }
+
+    public void SwitchSPrite(int healthLeft)
+    {
+        switch(healthLeft)
+        {
+            case int healthLevel when healthLevel == 0:
+                healthBar.sprite = health0;
+                break;
+            case int healthLevel when healthLevel == 1:
+                healthBar.sprite = health1;
+                break;
+            case int healthLevel when healthLevel == 2:
+                healthBar.sprite = health2;
+                break;
+            case int healthLevel when healthLevel == 3:
+                healthBar.sprite = health3;
+                break;
         }
     }
 }
