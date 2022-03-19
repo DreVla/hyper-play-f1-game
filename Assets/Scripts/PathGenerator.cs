@@ -16,15 +16,19 @@ public class PathGenerator : MonoBehaviour
 
     void Update() {
         timer -= Time.deltaTime;
-        if(timer <= 0f && pathsInstantiated < 3) {
-            int rand = Random.Range(0, pathTemplates.Length);
-            Instantiate(pathTemplates[rand], transform.position, Quaternion.identity);
-            pathsInstantiated++;
-            timer = 10.0f;
-        }
-        else if(timer <= 0f && pathsInstantiated == 1) {
-            Instantiate(pitStop);
-            timer = 10.0f;
+        
+        if(timer <= 0.0f) {
+            if(pathsInstantiated % 5 == 0) {
+                Instantiate(pitStop);
+                timer = 10.0f;
+                pathsInstantiated++;
+            }
+            else {
+                int rand = Random.Range(0, pathTemplates.Length);
+                Instantiate(pathTemplates[rand], transform.position, Quaternion.identity);
+                timer = 10.0f;
+                pathsInstantiated++;
+            }
         }
     }    
 
