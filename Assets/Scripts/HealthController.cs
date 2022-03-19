@@ -36,4 +36,24 @@ public class HealthController : MonoBehaviour
             }           
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Wall")
+        {
+            health -= 10;
+            Debug.Log(health.ToString());
+            Destroy(collision.gameObject);
+        }
+        else if (collision.tag == "Bonus")
+        {
+            if (health < 100)
+            {
+                health += 10;
+                Debug.Log(health.ToString());
+            }
+
+            Destroy(collision.gameObject);
+        }
+    }
 }
