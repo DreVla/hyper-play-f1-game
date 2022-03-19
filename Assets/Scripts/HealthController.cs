@@ -9,6 +9,7 @@ public class HealthController : MonoBehaviour
     public GameOver gameOver;
     public Image healthBar;
     public Sprite health0, health1, health2, health3;
+    public ParticleSystem explosionParticle;
 
     void Update()
     {
@@ -22,6 +23,7 @@ public class HealthController : MonoBehaviour
     {
         if(collision.collider.tag == "Wall")
         {
+            explosionParticle.Play();
             health -= 1;
         }
         else if(collision.collider.tag == "Bonus")
@@ -40,6 +42,7 @@ public class HealthController : MonoBehaviour
             health -= 1;
             SwitchSPrite(health);
             Destroy(collision.gameObject);
+            explosionParticle.Play();
         }
         else if (collision.tag == "Bonus")
         {
