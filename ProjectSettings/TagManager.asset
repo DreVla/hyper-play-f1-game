@@ -8,6 +8,8 @@ TagManager:
   - Competitor
   - Bonus
   - Wall
+  - Hamilton
+  - Enemy
   layers:
   - Default
   - TransparentFX
