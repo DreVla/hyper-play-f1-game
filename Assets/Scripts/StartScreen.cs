@@ -10,9 +10,4 @@ public class StartScreen : MonoBehaviour
         SceneManager.LoadScene("Joystick Scene");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

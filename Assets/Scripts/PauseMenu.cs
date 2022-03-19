@@ -7,6 +7,7 @@ public class PauseMenu : MonoBehaviour
 {
     public static bool gameIsPaused = false;
     public GameObject pauseOverlay;
+    public GameManager gameManager;
 
     void Start()
     {
@@ -17,24 +18,41 @@ public class PauseMenu : MonoBehaviour
 
     public void PauseGame()
     {
-        if (gameIsPaused)
+        if (gameManager.gameIsOver == false)
         {
-            Time.timeScale = 1f;
-            pauseOverlay.SetActive(false);
-            gameIsPaused = false;
+            Debug.Log("Game is not over");
+
+            if (gameIsPaused)
+            {
+                Time.timeScale = 1f;
+                pauseOverlay.SetActive(false);
+                gameIsPaused = false;
+            }
+            else
+            {
+                Time.timeScale = 0f;
+                pauseOverlay.SetActive(true);
+                gameIsPaused = true;
+            }
         }
         else
         {
-            Time.timeScale = 0f;
-            pauseOverlay.SetActive(true);
-            gameIsPaused = true;
+            pauseOverlay.SetActive(false);
         }
     }
 
     void OnApplicationPause()
     {
-        gameIsPaused = true;
-        Time.timeScale = 0f;
-        pauseOverlay.SetActive(true);
+        if (gameManager.gameIsOver == true)
+        {
+            pauseOverlay?.SetActive(false);
+        }
+        else
+        {
+            gameIsPaused = true;
+            Time.timeScale = 0f;
+            pauseOverlay.SetActive(true);
+        }
+
     }
 }
