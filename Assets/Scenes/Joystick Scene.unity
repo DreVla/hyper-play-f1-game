@@ -1025,6 +1025,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 281451168}
   m_CullTransparentMesh: 0
+--- !u!1 &356277600
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 356277601}
+  - component: {fileID: 356277603}
+  - component: {fileID: 356277602}
+  m_Layer: 5
+  m_Name: Car healt bar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &356277601
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 356277600}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1076727355}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -237.99, y: 443.23}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &356277602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 356277600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 74a787b087d458a45b1222d0db9145dc, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 1
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &356277603
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 356277600}
+  m_CullTransparentMesh: 1
 --- !u!1 &359521300
 GameObject:
   m_ObjectHideFlags: 0
@@ -2956,6 +3031,7 @@ RectTransform:
   - {fileID: 658120398}
   - {fileID: 2070544124}
   - {fileID: 1775682746}
+  - {fileID: 356277601}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4158,8 +4234,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0036392, y: 409.16}
-  m_SizeDelta: {x: 607.04, y: 131.544}
+  m_AnchoredPosition: {x: -26.216, y: 443.23}
+  m_SizeDelta: {x: 555.552, y: 131.544}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1775682747
 MonoBehaviour:
@@ -4202,7 +4278,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 114
-    m_Alignment: 4
+    m_Alignment: 5
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -5260,8 +5336,8 @@ GameObject:
   - component: {fileID: 2143446423}
   - component: {fileID: 2143446426}
   - component: {fileID: 2143446427}
-  - component: {fileID: 2143446428}
   - component: {fileID: 2143446429}
+  - component: {fileID: 2143446428}
   m_Layer: 0
   m_Name: Car
   m_TagString: Car
@@ -5425,5 +5501,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf081ba80add6c147a0d95dad51b9c55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
+  health: 3
   gameOver: {fileID: 2070544128}
+  healthBar: {fileID: 356277602}
+  health0: {fileID: 21300000, guid: 013c49991c9e27443a4f152236cae8b6, type: 3}
+  health1: {fileID: 21300000, guid: d4d6d9576413f6544a2ee281e28e5980, type: 3}
+  health2: {fileID: 21300000, guid: 13c39d51341f70141827a03439491f12, type: 3}
+  health3: {fileID: 21300000, guid: 74a787b087d458a45b1222d0db9145dc, type: 3}
