@@ -27,7 +27,6 @@ public class JoystickPlayerExample : MonoBehaviour
         {
             if (variableJoystick.Horizontal > 0) RotateRight();
             else if (variableJoystick.Horizontal < 0) RotateLeft();
-            else if(variableJoystick.Horizontal == 0) Center();
             rb.drag = initialDrag;
             Vector2 direction = Vector2.up * variableJoystick.Vertical + Vector2.right * variableJoystick.Horizontal;
             rb.AddForce(direction * speed * Time.fixedDeltaTime, ForceMode2D.Impulse);
@@ -51,7 +50,10 @@ public class JoystickPlayerExample : MonoBehaviour
     }
     private void Center()
     {
-        if(euler.z > 180) car.transform.Rotate(Vector3.forward * rotationSpeed * Time.deltaTime);
-        else if(euler.z < 180) car.transform.Rotate(Vector3.forward * -rotationSpeed * Time.deltaTime);
+        float carAngle = car.transform.eulerAngles.z;
+        if (carAngle > 180 && carAngle < 358) 
+            car.transform.Rotate(Vector3.forward * rotationSpeed);
+        else if(carAngle < 180 && carAngle > 2) 
+            car.transform.Rotate(Vector3.forward * -rotationSpeed);
     }
 }
