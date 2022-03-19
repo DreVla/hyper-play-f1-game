@@ -1945,7 +1945,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!50 &811377450
 Rigidbody2D:
   serializedVersion: 4
@@ -2547,7 +2547,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!50 &1010462086
 Rigidbody2D:
   serializedVersion: 4
@@ -4934,7 +4934,7 @@ MonoBehaviour:
   rb: {fileID: 2143446426}
   car: {fileID: 2143446422}
   euler: {x: 0, y: 0, z: 0}
-  rotationSpeed: 0
+  rotationSpeed: 2
 --- !u!212 &2143446424
 SpriteRenderer:
   m_ObjectHideFlags: 0
