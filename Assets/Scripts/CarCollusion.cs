@@ -5,6 +5,7 @@ using UnityEngine;
 public class CarCollusion : MonoBehaviour
 {
     public GameOver gameOver;
+    public JoystickPlayerExample playerController;
     void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.collider.tag == "Competitor")
@@ -18,6 +19,10 @@ public class CarCollusion : MonoBehaviour
         if (collision.tag == "Competitor")
         {
             gameOver.GameIsOver();
+        }
+        else if (collision.tag == "Drunk")
+        {
+            playerController.ReverseControls();
         }
     }
 }

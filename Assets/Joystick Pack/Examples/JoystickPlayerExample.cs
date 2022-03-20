@@ -10,9 +10,16 @@ public class JoystickPlayerExample : MonoBehaviour
     public VariableJoystick variableJoystick;
     public Rigidbody2D rb;
     public GameObject car;
+    public SpriteRenderer carRenderer;
     public GameObject boostParticles;
+    public float initialDrunkTimer;
+    private float drunkTimer;
+    public bool isDrunk;
 
-
+    private void Start()
+    {
+        isDrunk = false;
+    }
 
     public void FixedUpdate()
     {
@@ -23,7 +30,8 @@ public class JoystickPlayerExample : MonoBehaviour
         }
         else
         {
-            if (variableJoystick.Horizontal > 0) RotateRight();
+            if (variableJoystick.Vertical > 0.3) Center();
+            else if (variableJoystick.Horizontal > 0) RotateRight();
             else if (variableJoystick.Horizontal < 0) RotateLeft();
             // Check if need to show boost particle effect
             if (variableJoystick.Vertical > 0.5)
@@ -35,9 +43,25 @@ public class JoystickPlayerExample : MonoBehaviour
                 boostParticles.SetActive(false);
             }
             rb.drag = initialDrag;
+            if (isDrunk && drunkTimer > 0)
+            {
+                drunkTimer -= Time.fixedDeltaTime;
+                if (drunkTimer <= 0)
+                {
+                    isDrunk = false;
+                    carRenderer.flipY = false;
+                }
+            }
             Vector2 direction = Vector2.up * variableJoystick.Vertical + Vector2.right * variableJoystick.Horizontal;
             rb.AddForce(direction * speed * Time.fixedDeltaTime, ForceMode2D.Impulse);
         }
+    }
+
+    internal void ReverseControls()
+    {
+        drunkTimer = initialDrunkTimer;
+        isDrunk = true;
+        carRenderer.flipY = true;
     }
 
     public Vector3 euler;
