@@ -14,6 +14,7 @@ TagManager:
   - Grass
   - Asphalt
   - PitStopper
+  - Tires
   layers:
   - Default
   - TransparentFX

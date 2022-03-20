@@ -28,6 +28,12 @@ public class HealthController : MonoBehaviour
             health -= 1;
             soundManager.playSounds("Hotdog");
         }
+        else if (collision.collider.tag == "Tires")
+        {
+            explosionParticle.Play();
+            health -= 1;
+            soundManager.playSounds("Crush");
+        }
         else if(collision.collider.tag == "Bonus")
         {
             if (health < 4)
@@ -51,7 +57,15 @@ public class HealthController : MonoBehaviour
         {
             health -= 1;
             SwitchSPrite(health);
+            soundManager.playSounds("CrushMen");
             //soundManager.playSounds("Scream or smth");
+        }
+        else if (collision.tag == "Tires")
+        {
+            explosionParticle.Play();
+            health -= 1;
+            soundManager.playSounds("Crush");
+            SwitchSPrite(health);
         }
         else if (collision.tag == "Bonus")
         {
