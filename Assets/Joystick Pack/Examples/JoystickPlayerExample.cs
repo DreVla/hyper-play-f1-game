@@ -32,11 +32,14 @@ public class JoystickPlayerExample : MonoBehaviour
             if (variableJoystick.Horizontal == 0) Center();
             boostParticles.SetActive(false);
             if (onGrass)
-                Debug.Log("On grass");
+            {
+                Vector2 dragDown = Vector2.down * grassDrag;
+                rb.AddForce(dragDown, ForceMode2D.Impulse);
+            }
         }
         else
         {
-            if (variableJoystick.Vertical > 0.3) Center();
+            if (variableJoystick.Vertical > 0.1 && variableJoystick.Horizontal < 0.1 && variableJoystick.Horizontal > -0.1) Center();
             else if (variableJoystick.Horizontal > 0) RotateRight();
             else if (variableJoystick.Horizontal < 0) RotateLeft();
             // Check if need to show boost particle effect
@@ -50,8 +53,12 @@ public class JoystickPlayerExample : MonoBehaviour
             }
 
             if (onGrass)
-                Debug.Log("On grass");
-            else rb.drag = initialDrag;
+            {
+                Vector2 dragDown = Vector2.down * grassDrag;
+                rb.AddForce(dragDown, ForceMode2D.Impulse);
+            }
+
+            rb.drag = initialDrag;
 
             if (isDrunk && drunkTimer > 0)
             {
