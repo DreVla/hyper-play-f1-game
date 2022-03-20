@@ -10,7 +10,7 @@ public class HealthController : MonoBehaviour
     public Image healthBar;
     public Sprite health0, health1, health2, health3;
     public ParticleSystem explosionParticle;
-    //public ParticleSystem blood;
+    public SoundManager soundManager;
 
     void Update()
     {
@@ -26,6 +26,7 @@ public class HealthController : MonoBehaviour
         {
             explosionParticle.Play();
             health -= 1;
+            soundManager.playSounds("Hotdog");
         }
         else if(collision.collider.tag == "Bonus")
         {
@@ -44,6 +45,7 @@ public class HealthController : MonoBehaviour
             SwitchSPrite(health);
             Destroy(collision.gameObject);
             explosionParticle.Play();
+            soundManager.playSounds("Hotdog");
         }
         else if (collision.tag == "Bonus")
         {

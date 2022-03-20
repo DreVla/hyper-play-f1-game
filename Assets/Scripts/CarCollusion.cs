@@ -20,9 +20,33 @@ public class CarCollusion : MonoBehaviour
         {
             gameOver.GameIsOver();
         }
-        else if (collision.tag == "Drunk")
+        if (collision.tag == "Drunk")
         {
             playerController.ReverseControls();
+        }
+        if (collision.tag == "Grass")
+        {
+            playerController.increaseDragOnGrass();
+
+            Debug.Log("On grass enter");
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.tag == "Grass")
+        {
+            playerController.increaseDragOnGrass();
+            Debug.Log("On grass stay");
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "Grass")
+        {
+            playerController.dragOnAsphalt();
+            Debug.Log("On grass exit");
         }
     }
 }

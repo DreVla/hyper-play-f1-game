@@ -20,7 +20,6 @@ public class PauseMenu : MonoBehaviour
     {
         if (gameManager.gameIsOver == false)
         {
-            Debug.Log("Game is not over");
 
             if (gameIsPaused)
             {

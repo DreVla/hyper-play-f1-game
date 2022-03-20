@@ -12,7 +12,6 @@ public class PitStoppers : MonoBehaviour
     void Start()
     {
         target = GameObject.FindWithTag("Car").transform;
-        Debug.Log(target);
         rb = this.GetComponent<Rigidbody2D>();
     }
 
