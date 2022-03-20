@@ -748,6 +748,7 @@ MonoBehaviour:
   crushMen: {fileID: 8300000, guid: 3b05c35fc57673d46a68fd3b88681253, type: 3}
   speedUp: {fileID: 8300000, guid: 3b91e08df9352c34e96c26619d40f63f, type: 3}
   crushing: {fileID: 8300000, guid: 3a3af9ce066154e4682362508bfb4344, type: 3}
+  bonus: {fileID: 8300000, guid: 152cf1abbd2420a4ab3af24a4e2509b6, type: 3}
   audioSource: {fileID: 165362658}
   gameManager: {fileID: 736175507}
 --- !u!82 &165362658

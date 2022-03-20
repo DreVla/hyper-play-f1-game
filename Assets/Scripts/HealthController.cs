@@ -39,6 +39,7 @@ public class HealthController : MonoBehaviour
             if (health < 4)
             {
                 health += 1;
+                soundManager.playSounds("Bonus");
             }           
         }
     }
@@ -73,6 +74,7 @@ public class HealthController : MonoBehaviour
             {
                 health += 1;
                 SwitchSPrite(health);
+                soundManager.playSounds("Bonus");
             }
 
             Destroy(collision.gameObject);
