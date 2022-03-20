@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    public AudioClip hittingHotdog, crushMen, speedUp, crushing;
+    public AudioClip hittingHotdog, crushMen, speedUp, crushing, bonus;
     public AudioSource audioSource;
     public GameManager gameManager;
     // Start is called before the first frame update
@@ -37,6 +37,9 @@ public class SoundManager : MonoBehaviour
                 break;
             case "Crush":
                 audioSource.PlayOneShot(crushing);
+                break;
+            case "Bonus":
+                audioSource.PlayOneShot(bonus);
                 break;
         }
     }
