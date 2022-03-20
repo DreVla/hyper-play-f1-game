@@ -10,6 +10,7 @@ public class HealthController : MonoBehaviour
     public Image healthBar;
     public Sprite health0, health1, health2, health3;
     public ParticleSystem explosionParticle;
+    //public ParticleSystem blood;
 
     void Update()
     {
