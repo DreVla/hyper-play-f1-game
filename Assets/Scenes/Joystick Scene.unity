@@ -747,6 +747,7 @@ MonoBehaviour:
   hittingHotdog: {fileID: 8300000, guid: 77ef74a19db27034c9c4294ceb844299, type: 3}
   crushMen: {fileID: 8300000, guid: 3b05c35fc57673d46a68fd3b88681253, type: 3}
   speedUp: {fileID: 8300000, guid: 3b91e08df9352c34e96c26619d40f63f, type: 3}
+  crushing: {fileID: 8300000, guid: 3a3af9ce066154e4682362508bfb4344, type: 3}
   audioSource: {fileID: 165362658}
   gameManager: {fileID: 736175507}
 --- !u!82 &165362658
@@ -759,15 +760,15 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: f4a6fd9c5b43e3c429a4c3d52388bc67, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 20117a74a9cc07e429b1c7d2b7f7c860, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 135
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
