@@ -15,10 +15,13 @@ public class JoystickPlayerExample : MonoBehaviour
     public float initialDrunkTimer;
     private float drunkTimer;
     public bool isDrunk;
+    public bool onGrass;
 
     private void Start()
     {
         isDrunk = false;
+        onGrass = false;
+
     }
 
     public void FixedUpdate()
@@ -27,6 +30,8 @@ public class JoystickPlayerExample : MonoBehaviour
         {
             if (variableJoystick.Horizontal == 0) Center();
             boostParticles.SetActive(false);
+            if (onGrass)
+                Debug.Log("On grass");
         }
         else
         {
@@ -42,7 +47,11 @@ public class JoystickPlayerExample : MonoBehaviour
             {
                 boostParticles.SetActive(false);
             }
-            rb.drag = initialDrag;
+
+            if (onGrass)
+                Debug.Log("On grass");
+            else rb.drag = initialDrag;
+
             if (isDrunk && drunkTimer > 0)
             {
                 drunkTimer -= Time.fixedDeltaTime;
@@ -55,6 +64,16 @@ public class JoystickPlayerExample : MonoBehaviour
             Vector2 direction = Vector2.up * variableJoystick.Vertical + Vector2.right * variableJoystick.Horizontal;
             rb.AddForce(direction * speed * Time.fixedDeltaTime, ForceMode2D.Impulse);
         }
+    }
+
+    internal void dragOnAsphalt()
+    {
+        throw new NotImplementedException();
+    }
+
+    internal void increaseDragOnGrass()
+    {
+        throw new NotImplementedException();
     }
 
     internal void ReverseControls()
