@@ -7,6 +7,7 @@ public class JoystickPlayerExample : MonoBehaviour
 {
     public float speed;
     public float initialDrag = 2;
+    public float grassDrag = 10;
     public VariableJoystick variableJoystick;
     public Rigidbody2D rb;
     public GameObject car;
@@ -21,7 +22,6 @@ public class JoystickPlayerExample : MonoBehaviour
     {
         isDrunk = false;
         onGrass = false;
-
     }
 
     public void FixedUpdate()
@@ -68,12 +68,12 @@ public class JoystickPlayerExample : MonoBehaviour
 
     internal void dragOnAsphalt()
     {
-        throw new NotImplementedException();
+        onGrass = false;
     }
 
     internal void increaseDragOnGrass()
     {
-        throw new NotImplementedException();
+        onGrass = true;
     }
 
     internal void ReverseControls()
