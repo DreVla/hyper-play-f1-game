@@ -28,7 +28,7 @@ public class FlyingHotdog : MonoBehaviour
         // Checking the direction to determine which side of the screen it needs to reach
         if (direction == 1)
         {
-            transform.Rotate(Vector3.forward * -Time.fixedDeltaTime * 30);
+            transform.Rotate(Vector3.forward * -Time.fixedDeltaTime * 60);
             if (transform.position.x > Camera.main.transform.position.x + (Camera.main.aspect * Camera.main.orthographicSize) + transform.localScale.x)
             {
                 Destroy(gameObject);
@@ -36,7 +36,7 @@ public class FlyingHotdog : MonoBehaviour
         }
         else
         {
-            transform.Rotate(Vector3.forward * Time.fixedDeltaTime * 30);
+            transform.Rotate(Vector3.forward * Time.fixedDeltaTime * 60);
             if (transform.position.x < Camera.main.transform.position.x - (Camera.main.aspect * Camera.main.orthographicSize) - transform.localScale.x)
             {
                 Destroy(gameObject);
