@@ -1494,7 +1494,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 8
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2103,8 +2103,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86c9ebb5e1572c14ca5f9491c3bee714, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSpawnTime: 0
-  maxSpawnTime: 1
+  delayAndSpawnRate: 1
+  timeUntilSpawnRateIncrease: 10
   spawnRangeAbove: 5
   spawnRangeBelow: 5
   HotdogPrefab: {fileID: 6965365888435974956, guid: ae7ec75c1d04228478e5fa80994654e4, type: 3}
@@ -3915,7 +3915,7 @@ MonoBehaviour:
   variableJoystick: {fileID: 1566022673}
   rb: {fileID: 1344932492}
   car: {fileID: 1344932490}
-  timerDelay: 2
+  timerDelay: 1
   euler: {x: 0, y: 0, z: 0}
   rotationSpeed: 2
 --- !u!212 &1344932494

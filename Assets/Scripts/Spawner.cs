@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    [SerializeField, Tooltip("Min time until next spawn")]
-    public float minSpawnTime;
-    [SerializeField, Tooltip("Max time until next spawn")]
-    public float maxSpawnTime;
+    public float delayAndSpawnRate = 2;
+    public float timeUntilSpawnRateIncrease = 30;
 
     [SerializeField, Tooltip("Max range above the player a monster can spawn")]
     public float spawnRangeAbove;
@@ -19,38 +17,50 @@ public class Spawner : MonoBehaviour
 
     public GameObject playerCar;
     private List<GameObject> flyingHotDog = new List<GameObject>();
-    private float randomTimer;
 
     void Start()
     {
-        randomTimer = Random.Range(minSpawnTime, maxSpawnTime);
+        StartCoroutine(SpawnObject(delayAndSpawnRate));
     }
 
-    private void FixedUpdate()
+    IEnumerator SpawnObject(float firstDelay)
     {
-        if (randomTimer > 0)
+        float spawnRateCountdown = timeUntilSpawnRateIncrease;
+        float spawnCountdown = firstDelay;
+        while (true)
         {
-            randomTimer -= Time.deltaTime;
-        }
-        else
-        {
-            GameObject newHotdog = Instantiate(HotdogPrefab);
-            int direction;
-            float spawnX;
+            yield return null;
+            spawnRateCountdown -= Time.deltaTime;
+            spawnCountdown -= Time.deltaTime;
 
-            if (Random.Range(0, 2) == 0)
+            // Should a new object be spawned?
+            if (spawnCountdown < 0)
             {
-                direction = 1;
-                spawnX = Camera.main.transform.position.x - (Camera.main.aspect * Camera.main.orthographicSize) - newHotdog.transform.localScale.x;
+                spawnCountdown += delayAndSpawnRate;
+                GameObject newHotdog = Instantiate(HotdogPrefab);
+                int direction;
+                float spawnX;
+
+                if (Random.Range(0, 2) == 0)
+                {
+                    direction = 1;
+                    spawnX = Camera.main.transform.position.x - (Camera.main.aspect * Camera.main.orthographicSize) - newHotdog.transform.localScale.x;
+                }
+                else
+                {
+                    direction = -1;
+                    spawnX = Camera.main.transform.position.x + (Camera.main.aspect * Camera.main.orthographicSize) + newHotdog.transform.localScale.x;
+                }
+                newHotdog.GetComponent<FlyingHotdog>().SetUp(new Vector3(spawnX, Random.Range(playerCar.transform.position.y - spawnRangeBelow, playerCar.transform.position.y + spawnRangeAbove), 0), direction);
+                flyingHotDog.Add(newHotdog);
             }
-            else
+
+            // Should the spawn rate increase?
+            if (spawnRateCountdown < 0 && delayAndSpawnRate > 1)
             {
-                direction = -1;
-                spawnX = Camera.main.transform.position.x + (Camera.main.aspect * Camera.main.orthographicSize) + newHotdog.transform.localScale.x;
+                spawnRateCountdown += timeUntilSpawnRateIncrease;
+                delayAndSpawnRate -= 0.1f;
             }
-            newHotdog.GetComponent<FlyingHotdog>().SetUp(new Vector3(spawnX, Random.Range(playerCar.transform.position.y - spawnRangeBelow, playerCar.transform.position.y + spawnRangeAbove), 0), direction);
-            flyingHotDog.Add(newHotdog);
-            randomTimer = Random.Range(minSpawnTime, maxSpawnTime);
         }
     }
 
