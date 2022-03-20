@@ -28,7 +28,7 @@ public class CarCollusion : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.tag == "Grass" && collision.tag != "Asphalt")
+        if (collision.tag == "Grass")
         {
             playerController.increaseDragOnGrass();
             Debug.Log("On grass");

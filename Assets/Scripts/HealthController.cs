@@ -58,6 +58,7 @@ public class HealthController : MonoBehaviour
             health -= 1;
             SwitchSPrite(health);
             soundManager.playSounds("CrushMen");
+            Destroy(collision.gameObject);
             //soundManager.playSounds("Scream or smth");
         }
         else if (collision.tag == "Tires")
@@ -66,6 +67,7 @@ public class HealthController : MonoBehaviour
             health -= 1;
             soundManager.playSounds("Crush");
             SwitchSPrite(health);
+            Destroy(collision.gameObject);
         }
         else if (collision.tag == "Bonus")
         {

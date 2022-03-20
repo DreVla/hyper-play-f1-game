@@ -6056,7 +6056,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   initialDrag: 4
-  grassDrag: 10
+  grassDrag: 0.2
   variableJoystick: {fileID: 1566022673}
   rb: {fileID: 2143446426}
   car: {fileID: 2143446422}
