@@ -47,6 +47,12 @@ public class HealthController : MonoBehaviour
             explosionParticle.Play();
             soundManager.playSounds("Hotdog");
         }
+        if (collision.tag == "PitStopper")
+        {
+            health -= 1;
+            SwitchSPrite(health);
+            //soundManager.playSounds("Scream or smth");
+        }
         else if (collision.tag == "Bonus")
         {
             if (health < 4)
