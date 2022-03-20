@@ -13,6 +13,7 @@ TagManager:
   - Drunk
   - Grass
   - Asphalt
+  - PitStopper
   layers:
   - Default
   - TransparentFX
