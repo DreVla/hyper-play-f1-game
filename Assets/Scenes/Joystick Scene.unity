@@ -2382,6 +2382,11 @@ MonoBehaviour:
   - {fileID: 5806038590513040315, guid: 8c35c3d28ab22c943ac75789c5dcc3e1, type: 3}
   - {fileID: 38676142633092526, guid: 5e036ce4ff5a8ba45ad9fe3ea92515b1, type: 3}
   - {fileID: 6201197262316155197, guid: 6df055c52e1af7e459814149ff27cd0c, type: 3}
+  easypathTemplates:
+  - {fileID: 3246660238817102397, guid: 261b3732fbf5f484c913c58c3ba948ad, type: 3}
+  - {fileID: 4329243562178862704, guid: 56838aaa662a664489057436b55230d3, type: 3}
+  - {fileID: 3449870895068411462, guid: 540b7f80e896d2645b33b5c554437a24, type: 3}
+  easyPitStop: {fileID: 5488981590971545169, guid: 76aa777c923afef4cb98647f4aa210f8, type: 3}
   pitStop: {fileID: 3963776388376104269, guid: b99e34c8cfd3efe40a4cce7b824ef880, type: 3}
   startingPath: {fileID: 3524082958816388273, guid: 9ff64f473056e9e4988b0e259b0ec706, type: 3}
   timer: 2
