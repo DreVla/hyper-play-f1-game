@@ -11,7 +11,7 @@ public class JoystickPlayerExample : MonoBehaviour
     public Rigidbody2D rb;
     public GameObject car;
     public GameObject boostParticles;
-
+    public SoundManager soundManager;
 
 
     public void FixedUpdate()
