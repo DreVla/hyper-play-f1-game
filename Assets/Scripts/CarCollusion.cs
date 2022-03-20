@@ -24,5 +24,13 @@ public class CarCollusion : MonoBehaviour
         {
             playerController.ReverseControls();
         }
+        else if(collision.tag == "Grass")
+        {
+            playerController.increaseDragOnGrass();
+        }
+        else if(collision.tag == "Asphalt")
+        {
+            playerController.dragOnAsphalt();
+        }
     }
 }

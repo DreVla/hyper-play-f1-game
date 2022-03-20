@@ -10,6 +10,9 @@ TagManager:
   - Wall
   - Hamilton
   - Enemy
+  - Drunk
+  - Grass
+  - Asphalt
   layers:
   - Default
   - TransparentFX
