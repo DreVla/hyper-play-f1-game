@@ -4509,6 +4509,7 @@ GameObject:
   - component: {fileID: 1556125164}
   - component: {fileID: 1556125163}
   - component: {fileID: 1556125165}
+  - component: {fileID: 1556125166}
   m_Layer: 5
   m_Name: High score
   m_TagString: Untagged
@@ -4592,6 +4593,20 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 2, y: 2}
   m_UseGraphicAlpha: 1
+--- !u!114 &1556125166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1556125161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cf74ab5be20258499e80e4091097c37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highScoreText: {fileID: 1556125163}
+  endScoreValue: {fileID: 1775682747}
 --- !u!114 &1566022673 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3881087803549984439, guid: ec536a7718376554185e4a856d5ae230, type: 3}
@@ -5965,7 +5980,7 @@ MonoBehaviour:
   car: {fileID: 2143446422}
   carRenderer: {fileID: 2143446424}
   boostParticles: {fileID: 1301376477}
-  soundManager: {fileID: 0}
+  soundManager: {fileID: 165362657}
   initialDrunkTimer: 0
   isDrunk: 0
   onGrass: 0
@@ -6111,7 +6126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf081ba80add6c147a0d95dad51b9c55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 4
   gameOver: {fileID: 2070544128}
   healthBar: {fileID: 356277602}
   health0: {fileID: 21300000, guid: 013c49991c9e27443a4f152236cae8b6, type: 3}
@@ -6119,7 +6134,7 @@ MonoBehaviour:
   health2: {fileID: 21300000, guid: 13c39d51341f70141827a03439491f12, type: 3}
   health3: {fileID: 21300000, guid: 74a787b087d458a45b1222d0db9145dc, type: 3}
   explosionParticle: {fileID: 1864213304}
-  soundManager: {fileID: 0}
+  soundManager: {fileID: 165362657}
 --- !u!4 &8713114226965666
 Transform:
   m_ObjectHideFlags: 0
