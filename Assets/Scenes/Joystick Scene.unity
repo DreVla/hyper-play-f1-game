@@ -1911,7 +1911,7 @@ MonoBehaviour:
   - {fileID: 38676142633092526, guid: 5e036ce4ff5a8ba45ad9fe3ea92515b1, type: 3}
   - {fileID: 6201197262316155197, guid: 6df055c52e1af7e459814149ff27cd0c, type: 3}
   pitStop: {fileID: 3963776388376104269, guid: b99e34c8cfd3efe40a4cce7b824ef880, type: 3}
-  timer: 10
+  timer: 2
   pathsInstantiated: 0
 --- !u!4 &754190558
 Transform:

@@ -6,7 +6,7 @@ public class PathGenerator : MonoBehaviour
 {
     public GameObject[] pathTemplates;
     public GameObject pitStop;
-    public float timer = 10.0f;
+    public float timer = 2.0f;
     public int pathsInstantiated = 0;
 
     void Start() {
@@ -20,13 +20,13 @@ public class PathGenerator : MonoBehaviour
         if(timer <= 0.0f) {
             if(pathsInstantiated % 5 == 0) {
                 Instantiate(pitStop);
-                timer = 10.0f;
+                timer = 2.0f;
                 pathsInstantiated++;
             }
             else {
                 int rand = Random.Range(0, pathTemplates.Length);
                 Instantiate(pathTemplates[rand], transform.position, Quaternion.identity);
-                timer = 10.0f;
+                timer = 2.0f;
                 pathsInstantiated++;
             }
         }
