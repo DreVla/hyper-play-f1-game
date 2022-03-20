@@ -8,7 +8,7 @@ public class MovePathsDown : MonoBehaviour
 
     void Update() {
         transform.Translate(0, -5 * Time.deltaTime, 0);
-        if (gameObject.transform.position.y < -12) {
+        if (gameObject.transform.position.y < -30) {
             Destroy(gameObject);
             //speed =- 1;
         }
