@@ -6209,7 +6209,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf081ba80add6c147a0d95dad51b9c55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 3
   gameOver: {fileID: 2070544128}
   healthBar: {fileID: 356277602}
   health0: {fileID: 21300000, guid: 013c49991c9e27443a4f152236cae8b6, type: 3}
