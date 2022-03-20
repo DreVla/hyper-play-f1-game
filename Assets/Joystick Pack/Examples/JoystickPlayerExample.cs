@@ -13,6 +13,7 @@ public class JoystickPlayerExample : MonoBehaviour
     public GameObject car;
     public SpriteRenderer carRenderer;
     public GameObject boostParticles;
+    public SoundManager soundManager;
     public float initialDrunkTimer;
     private float drunkTimer;
     public bool isDrunk;

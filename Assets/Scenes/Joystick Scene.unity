@@ -5823,6 +5823,7 @@ MonoBehaviour:
   initialDrunkTimer: 0
   isDrunk: 0
   onGrass: 0
+  soundManager: {fileID: 1825199367}
   euler: {x: 0, y: 0, z: 0}
   rotationSpeed: 2
 --- !u!212 &2143446424
